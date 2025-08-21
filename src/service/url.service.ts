@@ -1,7 +1,7 @@
 import { serverConfig } from "../config";
 import { CacheRepository } from "../repositories/cache.repository";
 import { UrlRepository } from "../repositories/url.repository";
-import { toBase62 } from "../utils/Base62";
+import { toBase62 } from "../utils/base62";
 import { NotFoundError } from "../utils/errors/app.error";
 
 export class UrlService{
@@ -52,6 +52,10 @@ export class UrlService{
             originalUrl:url.originalUrl,
             shortUrl
         }
+    }
+    async incrementClicks(shortUrl:string){
+        await this.urlRepository.incrementClicks(shortUrl);
+        return;
     }
 
 }
