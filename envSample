@@ -1,0 +1,5 @@
+PORT=8000
+MONOG_URI="mongodb://localhost:27017/shorturl"
+REDIS_URL="redis://locahost:6379"
+REDIS_COUNTER_KEY="url"
+BASE_URL="http://localhost:3001"
